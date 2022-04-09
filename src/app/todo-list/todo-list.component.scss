@@ -1,0 +1,100 @@
+.buttonbtn1 {
+    border-radius:50%;
+    width:100px;
+    height:100px;
+    background: linear-gradient(#F16529, #E44D26);
+    box-shadow: 0px 3px 8px #aaa, inset 0px 2px 3px #fff;
+    border:none;
+    outline:none;
+    font: 18px Tahoma bold;
+    color: #ffffff;
+    text-shadow: 1px 1px 1px lighgrey;
+    margin:20px;
+    margin-left: 220px;
+    text-align: center;
+    }
+.buttonbtn1:hover{
+background: rgb(101, 101, 218);
+}
+
+.image1{
+    margin-top: 10;
+margin-left: -45px;
+border-radius:50%;
+width:50px;
+height:50px;
+}
+
+.buttonbtn2 {
+border-radius:50%;
+width:50px;
+height:50px;
+background: linear-gradient(#F16529, #E44D26);
+box-shadow: 0px 3px 8px #aaa, inset 0px 2px 3px #fff;
+font: 12px Tahoma bold;
+color: #ffffff;
+text-shadow: 1px 1px 1px lighgrey;
+}
+.buttonbtn2:hover{
+background: rgb(101, 101, 218);
+}
+
+/* Set a style for all buttons */
+.btn {
+background-color: #5f57ca;
+color: white;
+padding: 14px 20px;
+margin: 8px 0;
+border: none;
+cursor: pointer;
+width: 100%;
+border-radius: 15px !important;
+}
+.btn:hover {
+background: rgb(106, 224, 51);
+border: 1px solid #af5353;
+}
+
+.tooltip {
+    position:static;
+    display: inline-block;
+ }
+ .text{
+  position:fixed;
+  top: -20px;
+  left: 480px;
+  width: 50%;
+  font-size: 50px;
+  font-weight: 100;
+  color: rgba(76, 81, 66, 0.15);
+}
+ h1 {
+  position: absolute;
+  top: -20px;
+  width: 50%;
+  font-size: 50px;
+  font-weight: 100;
+  text-align: center;
+  color: rgba(87, 68, 68, 0.15);
+  -webkit-text-rendering: optimizeLegibility;
+  -moz-text-rendering: optimizeLegibility;
+  text-rendering: optimizeLegibility;
+}
+  /* Tooltip text */
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 200px;
+    background-color: rgba(255, 255, 255, 0.671);
+    color: rgb(7, 7, 7);
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+  }
+  
+  /* Show the tooltip text when you mouse over the tooltip container */
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }

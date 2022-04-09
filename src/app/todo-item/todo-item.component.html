@@ -1,0 +1,42 @@
+<div class="view" > 
+  <input 
+            class = "toggle"
+            type  = "checkbox"
+            name  = "done"
+            [ngModel]="data.isDone"
+            (ngModelChange)="updateEmmiter({isDone : $event})"
+    />
+        <label class="texte" (dblclick)="isEdit()">
+        {{data.label}} 
+    </label>
+    <button class="destroy"  (click)="removeEmmiter()"></button>
+  </div>
+  <div class="image-upload">
+    <footer class="option" *ngIf=" ObsImg | async as str" >
+      <ul class="filters">
+          <li>
+            <button class="img" (click)="userPhoto.click()">Upload</button> 
+          </li>
+          <button class="img" (click)="updateEmmiter({url : str})">link to Item</button>
+         
+      </ul>
+  </footer>
+    <input 
+     id="file-input"
+     type="file" accept="image/png, image/gif, image/jpeg" 
+     #userPhoto
+     (change)="onFileSelected($event)"
+     name="image"
+     autocomplete="off"
+     />
+ </div>  
+  <form  (ngSubmit)="isEditting = false">
+    <input  #newTextInput
+            name      = "newTextInput"
+            class     = "edit"
+            [ngModel]="data.label"
+            (ngModelChange)="updateEmmiter({label : $event})"
+            (blur)="isEditting = false"
+    />
+  </form>
+ 

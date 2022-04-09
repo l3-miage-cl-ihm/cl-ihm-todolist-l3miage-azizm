@@ -1,0 +1,37 @@
+
+<section *ngIf="(NewObs |async) as obs">
+<div *ngIf="auth.user | async as user">
+    <nav>
+        <ul>
+            <li style="display: inline-block;margin-right: 100px;margin-left: 0px;">
+                <div class="tooltip">
+                    <span class="tooltiptext">
+                        <br />
+                        <b>{{user.displayName}}
+                            <br>
+                            {{user.email}}
+                        </b><br />
+                        <button class="buttonbtn2" (click)="logout()">Logout</button>
+                    </span>
+                    <img class="image1" [src]="user.photoURL">
+                </div>
+            </li>
+            <li style="display: inline-block;text-align:right;">
+                <h1 class="text">{{ user.displayName }}</h1>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+<section class="todoapp">
+    <header class="header">
+        <h2>Choose an list</h2>
+        <select class="new-todo"  [(ngModel)]="id">
+            <option class="todo-list" *ngFor="let i of obs.tab" value="{{i}}">List {{i}}</option>
+        </select>
+    </header>
+</section>
+<button class="btn" (click)="affichList(id)">Afficher</button>
+<button class="btn" *ngIf="obs.tab.length > 1" (click)="Delete(id,obs)">Supprimer</button>
+<button class="btn" (click)="addNewList() ">Ajouter une Nouvelle List</button>
+

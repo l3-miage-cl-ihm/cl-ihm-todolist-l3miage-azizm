@@ -1,0 +1,98 @@
+
+<section *ngIf="(NewObs |async) as obs">
+<div *ngIf="auth.user | async as user">
+<nav>
+    <ul>
+        <li style="display: inline-block;margin-right: 100px;margin-left: 0px;">
+            <div class="tooltip">
+                <span class="tooltiptext">
+                    <br />
+                    <b>{{user.displayName}}
+                        <br>
+                        {{user.email}}
+
+                    </b><br />
+                    <br />
+                    <button class="buttonbtn2" (click)="logout()">Logout</button>
+                </span>
+                <img class="image1" [src]="user.photoURL">
+            </div>
+        </li>
+        <li style="display: inline-block;">
+            <h1 class="text">{{ user.displayName }}</h1>
+        </li>
+        <li class="h1">
+            <button class="buttonbtn2" (click)="navigateMenu()">Menu</button>
+        </li>
+    </ul>
+</nav>
+</div>
+<section class="todoapp">
+<header class="header">
+    <h1>{{obs.label}}</h1>
+    <form (ngSubmit)="ajouterLab(lab.value);lab.value=''">
+        <input name="newTodoInput" class="new-todo" placeholder="Que faire?" autofocus #lab />
+    </form>
+</header>
+<section class="main" *ngIf="obs.items.length > 0">
+    <input class="toggle-all" type="checkbox" name="toggleAll" [ngModel]="obs.allDone"
+        (ngModelChange)="onSelectAll($event,obs.items)" #toggleAll />
+    <label for="toggleAll" (click)="toggleAll.click()">Mark all as complete</label>
+    <ul class="todo-list">
+        <li *ngFor="let item of obs.displayeItem;index as i ;trackBy: trackById" [class.editing]="todoitem.isEditting"
+            [class.completed]="item.isDone == true">
+            <app-todo-item [data]="item" (updat)="update($event,item)" (remove)="remove(item)" 
+            (click)="urlItemImage = item.url" #todoitem>
+            </app-todo-item>
+        </li>
+    </ul>
+</section>
+{{jsonList}}
+<footer class="footer" *ngIf="obs.items.length > 0">
+    <span class="todo-count"><strong>{{obs.remeaning}}</strong> restantes</span>
+    <ul class="filters">
+
+        <li>
+            <a class="filterAll" [class.selected]="filterAll == obs.filter" (click)="setFilter(filterAll)">Tous</a>
+        </li>
+        <li>
+            <a class="filterActives" [class.selected]="filterActiv == obs.filter"
+                (click)="setFilter(filterActiv)">Actifs</a>
+        </li>
+        <li>
+            <a class="filterCompleted" [class.selected]="filterComlet == obs.filter"
+                (click)="setFilter(filterComlet)">Complétés</a>
+        </li>
+    </ul>
+ <button class="clear-completed" [class.selected]="filterAll == obs.filter"
+        (click)="onRemoveAll(obs.items)">Supprimer cochées</button>
+</footer>
+</section>
+
+<footer class="foot" *ngIf="obs.items.length > 0">
+    <b>Click sur un item pour afficher son image!</b>
+    <ul class="filters">
+        <li>
+            <button class="button"
+        (click)="isClicked = true"> Afficher Image</button>
+        </li>
+        <li>
+            <button class="button"
+            (click)="isClicked = false"> Masquer Image</button>
+        </li>
+        <li>
+    <a class="button" [href]="urlItemImage"
+      download="img.jpg">Télécharger</a>
+        </li>
+    </ul>
+</footer>
+ 
+</section>
+<section class="section1" *ngIf="isClicked">
+    <div id="container">
+        <div class="bloc1" *ngIf="urlItemImage.length>0"><img id="crop1" [src]="urlItemImage"width="425"></div>
+        <div class="bloc2" *ngIf="urlItemImage.length>0"> <ngx-qrcode id="crop2"
+            [value]="urlItemImage">
+          </ngx-qrcode></div>
+    </div>
+    

@@ -1,0 +1,166 @@
+.button {
+  background-color: #5f57ca;
+    color: white;
+    width: 120px;
+    height: 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    border-radius: 15px !important;;
+  }
+.button:hover{
+background: rgb(101, 101, 218);
+}
+.foot {
+  right: inherit;
+  color: #777;
+  padding: 10px 15px;
+  height: 20px;
+  text-align: center;
+  border-top: 1px solid #e6e6e6;
+}
+.section1 {
+    display:flex;
+    width:100%;
+    height:100vh;
+}
+
+#container {
+    margin:auto;
+    display:grid;
+    grid-template-columns: 420px 300px;
+    grid-template-rows: 300px 300px;
+    grid-template-areas:
+        "cellule1 cellule2";
+}
+
+.bloc1 {
+    grid-area: cellule1;
+}
+
+.bloc2 {
+    grid-area: cellule2;
+}
+
+/*ici la cellule fait 300x300px, elle est présente deux fois dans la 1ère ligne de la grille*/
+#crop1 {
+    width:400px;
+    height:600px;
+    object-fit: cover;
+}
+#crop2 {
+  left: 20px;
+  width:200px;
+  height:200px;
+  object-fit: cover;
+}
+/*ici la cellule fait 300x600px, elle est présente une fois dans la 2ème ligne de la grille*/
+
+.buttonbtn1 {
+    border-radius:50%;
+    width:100px;
+    height:100px;
+    background: linear-gradient(#F16529, #E44D26);
+    box-shadow: 0px 3px 8px #aaa, inset 0px 2px 3px #fff;
+    border:none;
+    outline:none;
+    font: 18px Tahoma bold;
+    color: #ffffff;
+    text-shadow: 1px 1px 1px lighgrey;
+    margin:20px;
+    margin-left: 220px;
+    text-align: center;
+    }
+.buttonbtn1:hover{
+background: rgb(101, 101, 218);
+}
+
+img {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;
+}
+
+.image-upload>input {
+  display: none;
+}
+.image1{
+    margin-top: 10;
+margin-left: -45px;
+border-radius:50%;
+width:50px;
+height:50px;
+}
+
+.buttonbtn2 {
+border-radius:50%;
+margin-top: -70px;
+width:50px;
+height:50px;
+background: linear-gradient(#F16529, #E44D26);
+box-shadow: 0px 3px 8px #aaa, inset 0px 2px 3px #fff;
+font: 12px Tahoma bold;
+color: #ffffff;
+text-shadow: 1px 1px 1px lighgrey;
+}
+.buttonbtn2:hover{
+background: rgb(101, 101, 218);
+}
+
+/* Set a style for all buttons */
+.btn {
+background-color: #5f57ca;
+color: white;
+padding: 14px 20px;
+margin: 8px 0;
+border: none;
+cursor: pointer;
+width: 100%;
+border-radius: 15px !important;
+}
+.btn:hover {
+background: rgb(106, 224, 51);
+border: 1px solid #af5353;
+}
+
+.tooltip {
+    position:static;
+    display: inline-block;
+ }
+ .h1 {
+
+    display: inline-block;
+    position: absolute;
+    top: 30px;
+    right: -200px;
+    width: 50%;
+    }
+  
+    .text{
+      position:absolute;
+      top: -20px;
+      left: 800px;
+      width: 50%;
+      font-size: 50px;
+      font-weight: 100;
+      color: rgba(76, 81, 66, 0.15);
+    }
+  /* Tooltip text */
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 200px;
+    background-color: rgba(255, 255, 255, 0.671);
+    color: rgb(7, 7, 7);
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+  }
+  
+  /* Show the tooltip text when you mouse over the tooltip container */
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }

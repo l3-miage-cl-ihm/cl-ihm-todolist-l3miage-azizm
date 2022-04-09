@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "mytodolist-64a4b": {
+      "hosting": {
+        "l3m-tpX-todolist-angular-y2022": [
+          "todolist-tk67k"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "mytodolist-64a4b"
+  }
+}
